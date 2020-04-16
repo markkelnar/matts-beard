@@ -19,7 +19,7 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
+          "name": "HelloDudeIntent",
           "slots": [],
           "samples": [
             "hello brah",
