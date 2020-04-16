@@ -27,7 +27,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Heelllooo, my dude.  How can I help you?"
+        speak_output = "Helllooo, my dude.  How can I help you?"
 
         return (
             handler_input.response_builder
@@ -82,7 +82,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Goodbye!"
+        speak_output = "See ya chump"
 
         return (
             handler_input.response_builder
@@ -141,7 +141,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speak_output = "Sorry, I had trouble doing what you asked. Please try again."
+        speak_output = "I think you're mic is mutted"
 
         return (
             handler_input.response_builder
