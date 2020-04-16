@@ -1,11 +1,14 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "matt dude",
+      "invocationName": "matts beard",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": []
+          "samples": [
+            "see ya",
+            "over and out"
+          ]
         },
         {
           "name": "AMAZON.HelpIntent",
