@@ -14,6 +14,8 @@ from ask_sdk_core.handler_input import HandlerInput
 
 from ask_sdk_model import Response
 
+import random
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -45,7 +47,13 @@ class HelloDudeIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "What up BRAH?!"
+        speak_output = random.choice([
+            "What up BRAH?!",
+            "I think you're mic is muted",
+            "I can't hear you",
+            "Tell me more",
+            "Hey chump"
+        ])
 
         return (
             handler_input.response_builder
@@ -82,7 +90,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "See ya chump"
+        speak_output = "No, you hang up first.  No you hang up.",
 
         return (
             handler_input.response_builder
@@ -158,8 +166,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 sb = SkillBuilder()
 
 sb.add_request_handler(LaunchRequestHandler())
-sb.add_request_handler(HelloDudeIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
+sb.add_request_handler(HelloDudeIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
