@@ -71,7 +71,10 @@ class HelpIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "You want me to create a jira for you, dude?"
+        speak_output = random.choice([
+            "You want me to create a jira for you, dude?",
+            "Bro bro you still need this jira ticket?"
+        ])
 
         return (
             handler_input.response_builder
